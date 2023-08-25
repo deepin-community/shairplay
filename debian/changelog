@@ -1,5 +1,26 @@
-template-repository (1.0-1) unstable; urgency=medium
+shairplay (0.9.0~git20180824.096b61a+dfsg1-3) unstable; urgency=medium
 
-  * Initial release
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Submit.
+  * Remove obsolete field Contact from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Vasyl Gello ]
+  * Bump Standards version to 4.6.0, no change required
+  * Bump copyright years
+
+ -- Vasyl Gello <vasek.gello@gmail.com>  Thu, 21 Apr 2022 09:30:47 +0000
+
+shairplay (0.9.0~git20180824.096b61a+dfsg1-2) unstable; urgency=medium
+
+  * Team upload.
+  * Bump Standards-Version to 4.5.1, no changes needed.
+  * Fix watchfile.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Thu, 21 Jan 2021 05:53:31 +0100
+
+shairplay (0.9.0~git20180824.096b61a+dfsg1-1) unstable; urgency=medium
+
+  * Initial upload. Closes: 963569
+
+ -- Vasyl Gello <vasek.gello@gmail.com>  Mon, 22 Jun 2020 05:16:00 +0000

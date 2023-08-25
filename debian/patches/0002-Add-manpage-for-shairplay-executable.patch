@@ -1,0 +1,75 @@
+From 1ddc56bcfb4b66c08e841b8bfdb3ac72a3518003 Mon Sep 17 00:00:00 2001
+From: Vasyl Gello <vasek.gello@gmail.com>
+Date: Sun, 24 May 2020 21:22:05 +0300
+Subject: [PATCH] Add manpage for shairplay executable
+Author: Vasyl Gello <vasek.gello@gmail.com>
+Forwarded: no
+---
+ src/Makefile.am |  2 ++
+ src/shairplay.1 | 43 +++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 45 insertions(+)
+ create mode 100644 src/shairplay.1
+
+diff --git a/src/Makefile.am b/src/Makefile.am
+index 3697bbc..e3cd6e0 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -11,4 +11,6 @@ if HAVE_LIBAO
+ 
+   shairplay_CFLAGS += $(libao_CFLAGS)
+   shairplay_LDADD += $(libao_LIBS)
++
++  man1_MANS = shairplay.1
+ endif
+diff --git a/src/shairplay.1 b/src/shairplay.1
+new file mode 100644
+index 0000000..b68f7b4
+--- /dev/null
++++ b/src/shairplay.1
+@@ -0,0 +1,43 @@
++.TH shairplay "1" "May 2020" "User Commands"
++.SH NAME
++shairplay \-  Free portable AirPlay server implementation similar to ShairPort.
++.SH SYNOPSIS
++.B shairplay
++[\fI\,OPTION\/\fR...]
++.SH DESCRIPTION
++Start the server with shairplay, if you are connected to a Wi-Fi the server
++should show as an AirPort Express on your iOS devices and Mac OS X computers
++in the same network.
++
++Notice that you need to have the airport.key file in your working directory
++when starting the shairplay service. It is not included in the binary for
++possible legal reasons.
++
++.TP
++\fB\-a\fR, \fB\-\-apname\fR=\fI\,AirPort\/\fR
++Sets Airport name
++.TP
++\fB\-p\fR, \fB\-\-password\fR=\fI\,secret\/\fR
++Sets password
++.TP
++\fB\-o\fR, \fB\-\-server_port\fR=\fI\,5000\/\fR
++Sets port for RAOP service
++.TP
++\fB\-\-hwaddr\fR=\fI\,address\/\fR
++Sets the MAC address, useful if running multiple instances
++.TP
++\fB\-\-ao_driver\fR=\fI\,driver\/\fR
++Sets the ao driver (optional)
++.TP
++\fB\-\-ao_devicename\fR=\fI\,devicename\/\fR
++Sets the ao device name (optional)
++.TP
++\fB\-\-ao_deviceid\fR=\fI\,id\/\fR
++Sets the ao device id (optional)
++.TP
++\fB\-h\fR, \fB\-\-help\fR
++This help
++.PP
++.SH AUTHORS
++
++Juho Vähä-Herttua
+-- 
+2.17.1
+
